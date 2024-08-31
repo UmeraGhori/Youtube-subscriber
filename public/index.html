@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Subscriber App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .logo img {
+            width: 200px; /* Increased the width of the logo */
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button, input[type="text"] {
+            background-color: #ff0000;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px 0;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        button:hover, input[type="text"]:focus {
+            background-color: #cc0000;
+        }
+        input[type="text"] {
+            display: block;
+            width: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="download.png" alt="YouTube Logo">
+        </div>
+        <div class="buttons">
+            <button onclick="navigateTo('/subscribers')">Subscribe</button>
+            <button onclick="navigateTo('/subscribers/names')">Subscriber Details</button>
+            <input type="text" id="subscriberId" placeholder="Enter Subscriber ID">
+            <button onclick="findSubscriber()">Find Subscriber</button>
+        </div>
+    </div>
+
+    <script>
+        function navigateTo(path) {
+            window.location.href = path;
+        }
+
+        function findSubscriber() {
+            const id = document.getElementById('subscriberId').value;
+            if (id) {
+                window.location.href = `/subscribers/${id}`;
+            } else {
+                alert('Please enter a subscriber ID');
+            }
+        }
+    </script>
+</body>
+</html>
