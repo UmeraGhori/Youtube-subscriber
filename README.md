@@ -6,10 +6,6 @@ This project is a simple Subscriber Management System built with Node.js, Expres
 - [Features](#features)
 - [Tech Stack](#tech-stack)
 - [Installation](#installation)
-- [Environment Variables](#environment-variables)
-- [Usage](#usage)
-- [API Endpoints](#api-endpoints)
-- [Deployment](#deployment)
   
 - ## **Features**
 - Add new subscribers with a name, subscribed channel, and subscription date.
