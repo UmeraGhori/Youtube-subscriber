@@ -9,7 +9,7 @@ mongoose.connect(DATABASE_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     serverSelectionTimeoutMS: 30000, // 30 seconds
-    socketTimeoutMS: 45000, // 45 seconds
+    socketTimeoutMS: 60000, // 60 seconds
 });
 
 const db = mongoose.connection;
