@@ -29,9 +29,9 @@ const refreshAll = async () => {
         await subscriberModel.insertMany(data);
         console.log('New subscribers inserted.');
 
-        // Disconnect from the database
-        await mongoose.disconnect();
-        console.log('Database connection closed.');
+        // // Disconnect from the database
+        // await mongoose.disconnect();
+        // console.log('Database connection closed.');
     } catch (error) {
         console.error('Error during database operations:', error);
     }

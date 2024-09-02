@@ -1,7 +1,7 @@
 // src/models/subscribers.js
 const mongoose = require('mongoose');
 
-const susbcriberSchema = new mongoose.Schema({
+const subscriberSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
@@ -17,4 +17,4 @@ const susbcriberSchema = new mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model('Subscriber',susbcriberSchema);
+module.exports = mongoose.model('Subscribers',subscriberSchema);
