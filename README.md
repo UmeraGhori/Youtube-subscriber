@@ -9,12 +9,9 @@ This project is a simple Subscriber Management System built with Node.js, Expres
 - [Environment Variables](#environment-variables)
 - [Usage](#usage)
 - [API Endpoints](#api-endpoints)
-- [Error Handling](#error-handling)
 - [Deployment](#deployment)
-- [Troubleshooting](#troubleshooting)
-- [License](#license)
-
-## **Features**
+  
+- ## **Features**
 - Add new subscribers with a name, subscribed channel, and subscription date.
 - Retrieve a list of all subscribers.
 - Connect to MongoDB Atlas for database operations.
