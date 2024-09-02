@@ -1,33 +1,16 @@
-// // src/index.js
-// const express = require('express')
-// const app = require('./app.js')
-// const mongoose = require('mongoose')
-// const port = 3000
-
-// // Parse JSON bodies (as sent by API clients)
-// app.use(express.json())
-// app.use(express.urlencoded({ extended: false }));
-
-// // Connect to DATABASE
-// const DATABASE_URL = "mongodb://localhost:27017/subscribers";
-// mongoose.connect(DATABASE_URL,{ useNewUrlParser: true, useUnifiedTopology: true });
-// const db = mongoose.connection
-// db.on('error', (err) => console.log(err))
-// db.once('open', () => console.log('connected to database'))
-
-// // Start Server
-// app.listen(port, () => console.log(`App listening on port ${port}!`))
-
-
-
-// src/index.js
 const express = require('express');
-const app = require('./app.js');
 const mongoose = require('mongoose');
 const path = require('path');
-const port = 3000;
+const app = require('./app'); 
 
-// Parse JSON bodies (as sent by API clients)
+const port = process.env.PORT || 3000; // Added fallback for port
+
+// Load environment variables
+require('dotenv').config();
+
+// Database URL from environment variable or fallback to a default
+const DATABASE_URL = process.env.MONGODB_URI || "mongodb://localhost:27017/subscribers";
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
@@ -35,11 +18,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, '../public')));
 
 // Connect to DATABASE
-const DATABASE_URL = "mongodb://localhost/subscribers";
-mongoose.connect(DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true });
-const db = mongoose.connection;
-db.on('error', (err) => console.log(err));
-db.once('open', () => console.log('connected to database'));
+mongoose.connect(DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => console.log('Connected to database'))
+    .catch(err => console.error('Database connection error:', err));
 
 // Start Server
 app.listen(port, () => console.log(`App listening on port ${port}!`));

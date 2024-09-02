@@ -6,8 +6,8 @@ const Subscriber = require('./models/subscribers');
 // Middleware to parse JSON bodies
 app.use(express.json());
 
-// Middleware to pretty-print JSON responses
-app.set('json spaces', 2);  // This will pretty-print JSON responses with an indentation of 2 spaces
+
+app.set('json spaces', 2); 
 
 // Route to get all subscribers
 app.get('/subscribers', async (req, res) => {
