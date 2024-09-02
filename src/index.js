@@ -9,7 +9,7 @@ const port = process.env.PORT || 3000; // Added fallback for port
 require('dotenv').config();
 
 // Database URL from environment variable or fallback to a default
-const DATABASE_URL = process.env.MONGODB_URI || "mongodb://localhost:27017/subscribers";
+const DATABASE_URL = process.env.MONGODB_URI || "node src/createDatabase.js";
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

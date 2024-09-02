@@ -4,7 +4,7 @@ const data = require('./data');
 require('dotenv').config();
 
 // Connect to DATABASE
-const DATABASE_URL = process.env.MONGODB_URI || "mongodb://localhost:27017/subscribers"; // Added fallback
+const DATABASE_URL = process.env.MONGODB_URI || "mongodb+srv://umeraghori07:RC2PM3MAzzMvJh1X@cluster0.he3zk.mongodb.net/myDatabase?retryWrites=true&w=majority"; // Added fallback
 mongoose.connect(DATABASE_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
